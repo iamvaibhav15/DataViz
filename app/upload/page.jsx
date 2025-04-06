@@ -1,3 +1,4 @@
+// uploader file
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -109,7 +110,7 @@ export default function FileUploader() {
     <>
       <Navbar />
       <div
-        className="max-w-7xl mx-auto p-8 bg-gray-900 rounded-xl shadow-xl space-y-6"
+        className="max-w-7xl mx-auto p-8 bg-gray-900 rounded-xl shadow-xl space-y-6 mt-8"
         onKeyDown={handleKeyPress}
         tabIndex={0}
       >
