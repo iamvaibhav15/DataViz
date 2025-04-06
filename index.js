@@ -19,7 +19,7 @@ mongoose
       console.log(`Server running on port ${process.env.PORT} → http://localhost:${process.env.PORT}`);
     });
   })
-  .catch((err) => console.error("MongoDB connection error:", err));
+  .catch((err) => console.log("MongoDB connection error:", err));
 
 // Middleware
 app.use(cors());
