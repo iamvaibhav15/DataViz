@@ -1,8 +1,10 @@
-require("dotenv").config();
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const fileRoutes = require("./Routes/fileRouter");
+import dotenv from "dotenv";
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import fileRoutes from "./Routes/fileRouter.js";
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -12,6 +14,10 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Connected to MongoDB");
+    // Start server only after DB connection
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${process.env.PORT} → http://localhost:${process.env.PORT}`);
+    });
   })
   .catch((err) => console.error("MongoDB connection error:", err));
 
@@ -19,15 +25,10 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-// Use routes
+// Routes
 app.use("/", fileRoutes);
 
-// Simple API route
+// Test Route
 app.get("/", (req, res) => {
   res.json({ message: "Hello from the backend!" });
-});
-
-// Start server only after DB connection
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT} http://localhost:${PORT}`);
 });

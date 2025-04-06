@@ -1,8 +1,13 @@
-const express = require("express");
-const multer = require("multer");
-const fs = require("fs");
-const path = require("path");
-const { handleFileUpload } = require("../controllers/fileController");
+import express from "express";
+import multer from "multer";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { handleFileUpload } from "../controllers/fileController.js";
+
+// __dirname workaround in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const router = express.Router();
 
@@ -20,9 +25,9 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage });
 
 // Routes
 router.post("/upload", upload.any(), handleFileUpload);
 
-module.exports = router;
+export default router;

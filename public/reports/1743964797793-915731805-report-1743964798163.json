@@ -1,0 +1,1479 @@
+{
+  "filename": "1743964797793-915731805.csv",
+  "timestamp": "2025-04-06T18:39:58.163Z",
+  "rowCount": 125,
+  "columnStats": {
+    "Person_No": {
+      "type": "text",
+      "uniqueCount": 125,
+      "mostCommon": "Person1",
+      "nonNullCount": 125
+    },
+    "Weight (KG)": {
+      "type": "numeric",
+      "min": 52,
+      "max": 71,
+      "average": 61.248,
+      "nonNullCount": 125
+    },
+    "Height (CM)": {
+      "type": "numeric",
+      "min": 161,
+      "max": 179,
+      "average": 169.632,
+      "nonNullCount": 125
+    }
+  },
+  "visualizationData": {
+    "barChart": [
+      {
+        "Person_No": "Person1",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person2",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person3",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person4",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person5",
+        "Weight (KG)": 65
+      },
+      {
+        "Person_No": "Person6",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person7",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person8",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person9",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person10",
+        "Weight (KG)": 53
+      },
+      {
+        "Person_No": "Person11",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person12",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person13",
+        "Weight (KG)": 65
+      },
+      {
+        "Person_No": "Person14",
+        "Weight (KG)": 53
+      },
+      {
+        "Person_No": "Person15",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person16",
+        "Weight (KG)": 59
+      },
+      {
+        "Person_No": "Person17",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person18",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person19",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person20",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person21",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person22",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person23",
+        "Weight (KG)": 65
+      },
+      {
+        "Person_No": "Person24",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person25",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person26",
+        "Weight (KG)": 55
+      },
+      {
+        "Person_No": "Person27",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person28",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person29",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person30",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person31",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person32",
+        "Weight (KG)": 65
+      },
+      {
+        "Person_No": "Person33",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person34",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person35",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person36",
+        "Weight (KG)": 71
+      },
+      {
+        "Person_No": "Person37",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person38",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person39",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person40",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person41",
+        "Weight (KG)": 52
+      },
+      {
+        "Person_No": "Person42",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person43",
+        "Weight (KG)": 59
+      },
+      {
+        "Person_No": "Person44",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person45",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person46",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person47",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person48",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person49",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person50",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person51",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person52",
+        "Weight (KG)": 53
+      },
+      {
+        "Person_No": "Person53",
+        "Weight (KG)": 66
+      },
+      {
+        "Person_No": "Person54",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person55",
+        "Weight (KG)": 59
+      },
+      {
+        "Person_No": "Person56",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person57",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person58",
+        "Weight (KG)": 53
+      },
+      {
+        "Person_No": "Person59",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person60",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person61",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person62",
+        "Weight (KG)": 55
+      },
+      {
+        "Person_No": "Person63",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person64",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person65",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person66",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person67",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person68",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person69",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person70",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person71",
+        "Weight (KG)": 52
+      },
+      {
+        "Person_No": "Person72",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person73",
+        "Weight (KG)": 52
+      },
+      {
+        "Person_No": "Person74",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person75",
+        "Weight (KG)": 52
+      },
+      {
+        "Person_No": "Person76",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person77",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person78",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person79",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person80",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person81",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person82",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person83",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person84",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person85",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person86",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person87",
+        "Weight (KG)": 53
+      },
+      {
+        "Person_No": "Person88",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person89",
+        "Weight (KG)": 66
+      },
+      {
+        "Person_No": "Person90",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person91",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person92",
+        "Weight (KG)": 55
+      },
+      {
+        "Person_No": "Person93",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person94",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person95",
+        "Weight (KG)": 59
+      },
+      {
+        "Person_No": "Person96",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person97",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person98",
+        "Weight (KG)": 70
+      },
+      {
+        "Person_No": "Person99",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person100",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person101",
+        "Weight (KG)": 52
+      },
+      {
+        "Person_No": "Person102",
+        "Weight (KG)": 55
+      },
+      {
+        "Person_No": "Person103",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person104",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person105",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person106",
+        "Weight (KG)": 59
+      },
+      {
+        "Person_No": "Person107",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person108",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person109",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person110",
+        "Weight (KG)": 55
+      },
+      {
+        "Person_No": "Person111",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person112",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person113",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person114",
+        "Weight (KG)": 55
+      },
+      {
+        "Person_No": "Person115",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person116",
+        "Weight (KG)": 53
+      },
+      {
+        "Person_No": "Person117",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person118",
+        "Weight (KG)": 59
+      },
+      {
+        "Person_No": "Person119",
+        "Weight (KG)": 65
+      },
+      {
+        "Person_No": "Person120",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person121",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person122",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person123",
+        "Weight (KG)": 66
+      },
+      {
+        "Person_No": "Person124",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person125",
+        "Weight (KG)": 54
+      }
+    ],
+    "lineChart": [
+      {
+        "Person_No": "Person1",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person10",
+        "Weight (KG)": 53
+      },
+      {
+        "Person_No": "Person100",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person101",
+        "Weight (KG)": 52
+      },
+      {
+        "Person_No": "Person102",
+        "Weight (KG)": 55
+      },
+      {
+        "Person_No": "Person103",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person104",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person105",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person106",
+        "Weight (KG)": 59
+      },
+      {
+        "Person_No": "Person107",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person108",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person109",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person11",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person110",
+        "Weight (KG)": 55
+      },
+      {
+        "Person_No": "Person111",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person112",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person113",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person114",
+        "Weight (KG)": 55
+      },
+      {
+        "Person_No": "Person115",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person116",
+        "Weight (KG)": 53
+      },
+      {
+        "Person_No": "Person117",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person118",
+        "Weight (KG)": 59
+      },
+      {
+        "Person_No": "Person119",
+        "Weight (KG)": 65
+      },
+      {
+        "Person_No": "Person12",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person120",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person121",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person122",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person123",
+        "Weight (KG)": 66
+      },
+      {
+        "Person_No": "Person124",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person125",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person13",
+        "Weight (KG)": 65
+      },
+      {
+        "Person_No": "Person14",
+        "Weight (KG)": 53
+      },
+      {
+        "Person_No": "Person15",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person16",
+        "Weight (KG)": 59
+      },
+      {
+        "Person_No": "Person17",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person18",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person19",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person2",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person20",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person21",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person22",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person23",
+        "Weight (KG)": 65
+      },
+      {
+        "Person_No": "Person24",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person25",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person26",
+        "Weight (KG)": 55
+      },
+      {
+        "Person_No": "Person27",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person28",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person29",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person3",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person30",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person31",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person32",
+        "Weight (KG)": 65
+      },
+      {
+        "Person_No": "Person33",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person34",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person35",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person36",
+        "Weight (KG)": 71
+      },
+      {
+        "Person_No": "Person37",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person38",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person39",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person4",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person40",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person41",
+        "Weight (KG)": 52
+      },
+      {
+        "Person_No": "Person42",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person43",
+        "Weight (KG)": 59
+      },
+      {
+        "Person_No": "Person44",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person45",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person46",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person47",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person48",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person49",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person5",
+        "Weight (KG)": 65
+      },
+      {
+        "Person_No": "Person50",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person51",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person52",
+        "Weight (KG)": 53
+      },
+      {
+        "Person_No": "Person53",
+        "Weight (KG)": 66
+      },
+      {
+        "Person_No": "Person54",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person55",
+        "Weight (KG)": 59
+      },
+      {
+        "Person_No": "Person56",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person57",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person58",
+        "Weight (KG)": 53
+      },
+      {
+        "Person_No": "Person59",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person6",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person60",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person61",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person62",
+        "Weight (KG)": 55
+      },
+      {
+        "Person_No": "Person63",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person64",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person65",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person66",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person67",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person68",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person69",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person7",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person70",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person71",
+        "Weight (KG)": 52
+      },
+      {
+        "Person_No": "Person72",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person73",
+        "Weight (KG)": 52
+      },
+      {
+        "Person_No": "Person74",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person75",
+        "Weight (KG)": 52
+      },
+      {
+        "Person_No": "Person76",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person77",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person78",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person79",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person8",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person80",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person81",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person82",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person83",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person84",
+        "Weight (KG)": 62
+      },
+      {
+        "Person_No": "Person85",
+        "Weight (KG)": 60
+      },
+      {
+        "Person_No": "Person86",
+        "Weight (KG)": 64
+      },
+      {
+        "Person_No": "Person87",
+        "Weight (KG)": 53
+      },
+      {
+        "Person_No": "Person88",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person89",
+        "Weight (KG)": 66
+      },
+      {
+        "Person_No": "Person9",
+        "Weight (KG)": 63
+      },
+      {
+        "Person_No": "Person90",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person91",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person92",
+        "Weight (KG)": 55
+      },
+      {
+        "Person_No": "Person93",
+        "Weight (KG)": 68
+      },
+      {
+        "Person_No": "Person94",
+        "Weight (KG)": 54
+      },
+      {
+        "Person_No": "Person95",
+        "Weight (KG)": 59
+      },
+      {
+        "Person_No": "Person96",
+        "Weight (KG)": 61
+      },
+      {
+        "Person_No": "Person97",
+        "Weight (KG)": 67
+      },
+      {
+        "Person_No": "Person98",
+        "Weight (KG)": 70
+      },
+      {
+        "Person_No": "Person99",
+        "Weight (KG)": 67
+      }
+    ],
+    "scatterPlot": [
+      {
+        "Weight (KG)": 67
+      },
+      {
+        "Weight (KG)": 69
+      },
+      {
+        "Weight (KG)": 61
+      },
+      {
+        "Weight (KG)": 60
+      },
+      {
+        "Weight (KG)": 65
+      },
+      {
+        "Weight (KG)": 62
+      },
+      {
+        "Weight (KG)": 63
+      },
+      {
+        "Weight (KG)": 61
+      },
+      {
+        "Weight (KG)": 63
+      },
+      {
+        "Weight (KG)": 53
+      },
+      {
+        "Weight (KG)": 63
+      },
+      {
+        "Weight (KG)": 69
+      },
+      {
+        "Weight (KG)": 65
+      },
+      {
+        "Weight (KG)": 53
+      },
+      {
+        "Weight (KG)": 61
+      },
+      {
+        "Weight (KG)": 59
+      },
+      {
+        "Weight (KG)": 67
+      },
+      {
+        "Weight (KG)": 61
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 60
+      },
+      {
+        "Weight (KG)": 60
+      },
+      {
+        "Weight (KG)": 68
+      },
+      {
+        "Weight (KG)": 65
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 60
+      },
+      {
+        "Weight (KG)": 55
+      },
+      {
+        "Weight (KG)": 69
+      },
+      {
+        "Weight (KG)": 63
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 63
+      },
+      {
+        "Weight (KG)": 64
+      },
+      {
+        "Weight (KG)": 65
+      },
+      {
+        "Weight (KG)": 69
+      },
+      {
+        "Weight (KG)": 64
+      },
+      {
+        "Weight (KG)": 62
+      },
+      {
+        "Weight (KG)": 71
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 62
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 68
+      },
+      {
+        "Weight (KG)": 52
+      },
+      {
+        "Weight (KG)": 62
+      },
+      {
+        "Weight (KG)": 59
+      },
+      {
+        "Weight (KG)": 69
+      },
+      {
+        "Weight (KG)": 64
+      },
+      {
+        "Weight (KG)": 68
+      },
+      {
+        "Weight (KG)": 63
+      },
+      {
+        "Weight (KG)": 61
+      },
+      {
+        "Weight (KG)": 68
+      },
+      {
+        "Weight (KG)": 68
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 53
+      },
+      {
+        "Weight (KG)": 66
+      },
+      {
+        "Weight (KG)": 62
+      },
+      {
+        "Weight (KG)": 59
+      },
+      {
+        "Weight (KG)": 63
+      },
+      {
+        "Weight (KG)": 64
+      },
+      {
+        "Weight (KG)": 53
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 67
+      },
+      {
+        "Weight (KG)": 67
+      },
+      {
+        "Weight (KG)": 55
+      },
+      {
+        "Weight (KG)": 68
+      },
+      {
+        "Weight (KG)": 67
+      },
+      {
+        "Weight (KG)": 69
+      },
+      {
+        "Weight (KG)": 63
+      },
+      {
+        "Weight (KG)": 60
+      },
+      {
+        "Weight (KG)": 67
+      },
+      {
+        "Weight (KG)": 60
+      },
+      {
+        "Weight (KG)": 64
+      },
+      {
+        "Weight (KG)": 52
+      },
+      {
+        "Weight (KG)": 61
+      },
+      {
+        "Weight (KG)": 52
+      },
+      {
+        "Weight (KG)": 68
+      },
+      {
+        "Weight (KG)": 52
+      },
+      {
+        "Weight (KG)": 69
+      },
+      {
+        "Weight (KG)": 64
+      },
+      {
+        "Weight (KG)": 64
+      },
+      {
+        "Weight (KG)": 61
+      },
+      {
+        "Weight (KG)": 61
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 62
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 62
+      },
+      {
+        "Weight (KG)": 60
+      },
+      {
+        "Weight (KG)": 64
+      },
+      {
+        "Weight (KG)": 53
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 66
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 55
+      },
+      {
+        "Weight (KG)": 68
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 59
+      },
+      {
+        "Weight (KG)": 61
+      },
+      {
+        "Weight (KG)": 67
+      },
+      {
+        "Weight (KG)": 70
+      },
+      {
+        "Weight (KG)": 67
+      },
+      {
+        "Weight (KG)": 61
+      },
+      {
+        "Weight (KG)": 52
+      },
+      {
+        "Weight (KG)": 55
+      },
+      {
+        "Weight (KG)": 67
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 61
+      },
+      {
+        "Weight (KG)": 59
+      },
+      {
+        "Weight (KG)": 62
+      },
+      {
+        "Weight (KG)": 68
+      },
+      {
+        "Weight (KG)": 61
+      },
+      {
+        "Weight (KG)": 55
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 63
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 55
+      },
+      {
+        "Weight (KG)": 68
+      },
+      {
+        "Weight (KG)": 53
+      },
+      {
+        "Weight (KG)": 67
+      },
+      {
+        "Weight (KG)": 59
+      },
+      {
+        "Weight (KG)": 65
+      },
+      {
+        "Weight (KG)": 67
+      },
+      {
+        "Weight (KG)": 63
+      },
+      {
+        "Weight (KG)": 54
+      },
+      {
+        "Weight (KG)": 66
+      },
+      {
+        "Weight (KG)": 68
+      },
+      {
+        "Weight (KG)": 54
+      }
+    ],
+    "pieChart": [
+      {
+        "Person_No": "Person36",
+        "Weight (KG)": 71
+      },
+      {
+        "Person_No": "Person98",
+        "Weight (KG)": 70
+      },
+      {
+        "Person_No": "Person2",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person12",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person27",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person33",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person44",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person65",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person76",
+        "Weight (KG)": 69
+      },
+      {
+        "Person_No": "Person22",
+        "Weight (KG)": 68
+      }
+    ]
+  },
+  "sampleRows": [
+    {
+      "Person_No": "Person1",
+      "Weight (KG)": "67",
+      "Height (CM)": "176"
+    },
+    {
+      "Person_No": "Person2",
+      "Weight (KG)": "69",
+      "Height (CM)": "178"
+    },
+    {
+      "Person_No": "Person3",
+      "Weight (KG)": "61",
+      "Height (CM)": "170"
+    },
+    {
+      "Person_No": "Person4",
+      "Weight (KG)": "60",
+      "Height (CM)": "169"
+    },
+    {
+      "Person_No": "Person5",
+      "Weight (KG)": "65",
+      "Height (CM)": "174"
+    }
+  ]
+}

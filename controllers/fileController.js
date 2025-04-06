@@ -1,13 +1,22 @@
-const File = require("../models/file");
-const { analyzeCSV } = require("../services/analyze-wrapper");
+// fileController.mjs
+import File from "../models/file.js";
+import { analyzeCSV } from "../services/analysis.js";
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
 
-async function handleFileUpload(req, res) {
+// To use __dirname in ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export async function handleFileUpload(req, res) {
   try {
     if (!req.files) {
       return res.status(400).json({ message: "No file uploaded" });
     }
-    
+
     const file = req.files[0];
+
     // Save file metadata to MongoDB
     const fileData = new File({
       filename: file.filename,
@@ -16,9 +25,21 @@ async function handleFileUpload(req, res) {
       size: file.size,
     });
     await fileData.save();
-    
-    // Call the FastAPI service by sending the file path
+
+    // Analyze the CSV file
     const result = await analyzeCSV(fileData.path);
+
+    // Save a copy of the CSV to a public directory
+    const publicPath = path.join(process.cwd(), "public", "uploads");
+
+    if (!fs.existsSync(publicPath)) {
+      fs.mkdirSync(publicPath, { recursive: true });
+    }
+
+    const publicFilePath = path.join(publicPath, file.filename);
+    fs.copyFileSync(file.path, publicFilePath);
+
+    const fileUrl = `/uploads/${file.filename}`;
 
     return res.status(200).json({
       message: "File uploaded and analyzed successfully",
@@ -27,8 +48,12 @@ async function handleFileUpload(req, res) {
         originalName: file.originalname,
         path: file.path,
         size: file.size,
+        publicUrl: fileUrl,
       },
-      analysis: result, // Contains report_url (e.g., { message, report_url })
+      analysis: {
+        ...result,
+        csvUrl: fileUrl,
+      },
     });
   } catch (error) {
     console.error("Error uploading file:", error);
@@ -36,6 +61,33 @@ async function handleFileUpload(req, res) {
   }
 }
 
-module.exports = {
-  handleFileUpload,
-};
+export async function getFileById(req, res) {
+  try {
+    const fileId = req.params.id;
+    const file = await File.findById(fileId);
+
+    if (!file) {
+      return res.status(404).json({ message: "File not found" });
+    }
+
+    const fileUrl = `/uploads/${file.filename}`;
+
+    return res.status(200).json({
+      file,
+      publicUrl: fileUrl,
+    });
+  } catch (error) {
+    console.error("Error retrieving file:", error);
+    return res.status(500).json({ message: "Error retrieving file" });
+  }
+}
+
+export async function getAllFiles(req, res) {
+  try {
+    const files = await File.find().sort({ createdAt: -1 });
+    return res.status(200).json({ files });
+  } catch (error) {
+    console.error("Error retrieving files:", error);
+    return res.status(500).json({ message: "Error retrieving files" });
+  }
+}
