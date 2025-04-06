@@ -71,7 +71,7 @@ export default function FileUploader() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/upload",
+        "https://vizulytic.onrender.com/upload",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
