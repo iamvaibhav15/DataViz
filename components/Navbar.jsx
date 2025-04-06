@@ -2,10 +2,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname(); // Get current route path
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -20,6 +22,13 @@ export default function Navbar() {
 
   const handleNavClick = (pageId) => {
     setIsOpen(false); // Close mobile menu if open
+  };
+
+  // Function to check if the current page matches the nav item
+  const isActive = (path) => {
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
+    return false;
   };
 
   return (
@@ -101,10 +110,14 @@ export default function Navbar() {
                 <Link href={item.directTo} key={item.id}>
                   <button
                     onClick={() => handleNavClick(item.id)}
-                    className="relative px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 group"
+                    className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 group
+                      ${isActive(item.directTo) ? 'text-white' : 'text-gray-300 hover:text-white'}`}
                   >
                     {item.name}
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+                    <span 
+                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-purple-500 transition-transform duration-300 ease-out
+                        ${isActive(item.directTo) ? 'transform scale-x-100' : 'transform scale-x-0 group-hover:scale-x-100'}`} 
+                    />
                   </button>
                 </Link>
               ))}
@@ -139,10 +152,14 @@ export default function Navbar() {
             <Link href={item.directTo} key={item.id}>
               <div
                 onClick={() => handleNavClick(item.id)}
-                className="group w-full cursor-pointer px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700/50 hover:text-white transition-all duration-300"
+                className={`group w-full cursor-pointer px-3 py-2 rounded-md text-base font-medium transition-all duration-300
+                  ${isActive(item.directTo) ? 'bg-gray-700/70 text-white' : 'text-gray-300 hover:bg-gray-700/50 hover:text-white'}`}
               >
                 <span className="flex items-center">
-                  <span className="inline-block w-1 h-5 mr-2 rounded-sm bg-transparent group-hover:bg-purple-500/50 transition-all duration-300" />
+                  <span 
+                    className={`inline-block w-1 h-5 mr-2 rounded-sm transition-all duration-300
+                      ${isActive(item.directTo) ? 'bg-purple-500' : 'bg-transparent group-hover:bg-purple-500/50'}`} 
+                  />
                   {item.name}
                 </span>
               </div>
