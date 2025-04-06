@@ -1,10 +1,13 @@
 "use client";
 
+import Navbar from "../../components/Navbar";
 import { BarChart, PieChart, LineChart, Activity, Users, Globe, Award, BookOpen, Code, Zap, Check } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-200">
+    <>
+      <Navbar/>
+      <div className="min-h-screen bg-gray-900 text-gray-200">
       {/* Main About Content - Long scrollable format */}
       <div className="container mx-auto max-w-7xl px-4 py-12">
         <section className="mb-20">
@@ -427,5 +430,6 @@ export default function About() {
         </section> 
       </div> 
     </div>
+    </>
   )}         
             
