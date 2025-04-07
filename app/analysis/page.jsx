@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FileText, ArrowLeft, Download, BarChart } from "lucide-react";
-import D3Visualizer from "../../components/CSVVisualizer";
+import CSVVisualizer from "../../components/CSVVisualizer";
 
 export default function AnalysisPage() {
   const [reportUrl, setReportUrl] = useState("");
@@ -76,8 +76,8 @@ export default function AnalysisPage() {
         );
       case "visualization":
         return (
-          <D3Visualizer 
-            csvUrl={csvUrl} 
+          <CSVVisualizer 
+            csvUrl={`https://vizulytic.onrender.com${csvUrl}`} 
             columnStats={analysisData?.analysis?.columnStats} 
           />
         );
@@ -131,7 +131,7 @@ export default function AnalysisPage() {
                 
                 {analysisData?.analysis?.rowCount && (
                   <p className="text-gray-300 mb-2">
-                    <span className="font-medium">Rows:</span> {analysisData.analysis.rowCount.toLocaleString()}
+                    <span className="font-medium">Rows:</span> {analysisData.analysis.rowCount}
                   </p>
                 )}
                 
@@ -140,10 +140,9 @@ export default function AnalysisPage() {
                     <span className="font-medium">Columns:</span> {analysisData.analysis.columnCount}
                   </p>
                 )}
-
                 {reportUrl && (
                   <a 
-                    href={reportUrl}
+                    href={`https://vizulytic.onrender.com/public${reportUrl}`}
                     target="_blank"
                     rel="noopener noreferrer" 
                     className="inline-flex items-center px-5 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors shadow-sm"
