@@ -1,12 +1,12 @@
-import fs from 'fs';
-import path from 'path';
-import csvParser from 'csv-parser';
+import fs from "fs";
+import path from "path";
+import csvParser from "csv-parser";
 
 /**
- * Analyzes a CSV file and generates a report with statistics and visualization data
  * @param {string} filePath - Path to the CSV file
  * @returns {Promise<Object>} Analysis results and visualization data
  */
+
 export async function analyzeCSV(filePath) {
   return new Promise((resolve, reject) => {
     const results = [];
@@ -16,18 +16,16 @@ export async function analyzeCSV(filePath) {
     // Create readable stream from the CSV file
     fs.createReadStream(filePath)
       .pipe(csvParser())
-      .on('headers', (headerList) => {
+      .on("headers", (headerList) => {
         headers.push(...headerList);
       })
-      .on('data', (data) => {
+      .on("data", (data) => {
         results.push(data);
         rowCount++;
       })
-      .on('end', async () => {
+      .on("end", async () => {
         try {
-          // Basic analysis of the CSV data
           const columnStats = analyzeColumns(results, headers);
-
           // Generate visualization data
           const visualizationData = await prepareVisualizationData(
             results,
@@ -56,7 +54,7 @@ export async function analyzeCSV(filePath) {
           reject(err);
         }
       })
-      .on('error', (error) => {
+      .on("error", (error) => {
         reject(error);
       });
   });
@@ -69,15 +67,15 @@ export async function analyzeCSV(filePath) {
  * @returns {Object} Processed data for different visualization types
  */
 async function prepareVisualizationData(data, columnStats) {
-  const d3 = await import('d3');
+  const d3 = await import("d3");
 
   let categoricalColumn = null;
   let numericColumn = null;
 
   for (const column in columnStats) {
-    if (columnStats[column].type === 'text' && !categoricalColumn) {
+    if (columnStats[column].type === "text" && !categoricalColumn) {
       categoricalColumn = column;
-    } else if (columnStats[column].type === 'numeric' && !numericColumn) {
+    } else if (columnStats[column].type === "numeric" && !numericColumn) {
       numericColumn = column;
     }
 
@@ -165,9 +163,9 @@ function analyzeColumns(data, headers) {
     const values = data.map((row) => row[header]);
     const type = determineColumnType(values);
 
-    if (type === 'numeric') {
+    if (type === "numeric") {
       const numericValues = values
-        .filter((v) => v !== null && v !== undefined && v !== '')
+        .filter((v) => v !== null && v !== undefined && v !== "")
         .map((v) => parseFloat(v));
 
       stats[header] = {
@@ -181,7 +179,9 @@ function analyzeColumns(data, headers) {
       };
     } else {
       const uniqueValues = [
-        ...new Set(values.filter((v) => v !== null && v !== undefined && v !== '')),
+        ...new Set(
+          values.filter((v) => v !== null && v !== undefined && v !== "")
+        ),
       ];
 
       stats[header] = {
@@ -189,7 +189,7 @@ function analyzeColumns(data, headers) {
         uniqueCount: uniqueValues.length,
         mostCommon: findMostCommon(values),
         nonNullCount: values.filter(
-          (v) => v !== null && v !== undefined && v !== ''
+          (v) => v !== null && v !== undefined && v !== ""
         ).length,
       };
     }
@@ -200,14 +200,14 @@ function analyzeColumns(data, headers) {
 
 function determineColumnType(values) {
   const sampleValues = values
-    .filter((v) => v !== null && v !== undefined && v !== '')
+    .filter((v) => v !== null && v !== undefined && v !== "")
     .slice(0, 100);
 
   const numericCount = sampleValues.filter(
     (value) => !isNaN(parseFloat(value))
   ).length;
 
-  return numericCount >= sampleValues.length * 0.8 ? 'numeric' : 'text';
+  return numericCount >= sampleValues.length * 0.8 ? "numeric" : "text";
 }
 
 function findMostCommon(values) {
@@ -216,7 +216,7 @@ function findMostCommon(values) {
   let maxCount = 0;
 
   values.forEach((value) => {
-    if (value === null || value === undefined || value === '') return;
+    if (value === null || value === undefined || value === "") return;
 
     counts[value] = (counts[value] || 0) + 1;
 
@@ -230,7 +230,7 @@ function findMostCommon(values) {
 }
 
 function generateReport(filePath, data, columnStats, visualizationData) {
-  const reportDir = path.join(process.cwd(), 'public', 'reports');
+  const reportDir = path.join(process.cwd(), "public", "reports");
 
   if (!fs.existsSync(reportDir)) {
     fs.mkdirSync(reportDir, { recursive: true });
