@@ -1,36 +1,166 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Vizualtyics
+
+A powerful CSV analytics platform that processes data files and extracts meaningful insights through visualization and analysis.
+
+## Project Overview
+
+Vizualtyics is a full-stack web application that allows users to upload CSV files, analyze the data, and generate visual representations to extract insights. The platform offers various analytical tools and services to help users make data-driven decisions.
+
+## Features
+
+- **CSV File Upload**: Secure file upload system for CSV data
+- **Data Analysis**: Advanced analytics to extract patterns and insights
+- **Data Visualization**: Interactive charts and graphs for better understanding
+- **Report Generation**: Create and export detailed reports
+- **User-friendly Interface**: Intuitive UI for seamless interaction
+
+## Tech Stack
+
+### Frontend
+- Next.js
+- React
+- CSS Modules
+- Custom components (Navbar, Footer, CSV Visualizer)
+
+### Backend
+- Node.js
+- Express.js
+- File system operations for CSV processing
+- Custom controllers and services for data analysis
+
+## Project Structure
+
+```
+├── frontend (.next)
+│   ├── .vercel
+│   ├── app
+│   │   ├── about
+│   │   │   └── page.jsx
+│   │   ├── analysis
+│   │   │   └── page.jsx
+│   │   ├── pricing
+│   │   │   └── page.jsx
+│   │   ├── upload
+│   │   │   └── page.jsx
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── components
+│   │   ├── CSVVisualizer.jsx
+│   │   ├── Footer.jsx
+│   │   └── Navbar.jsx
+│   ├── node_modules
+│   ├── public
+│   ├── .gitignore
+│   ├── eslint.config.mjs
+│   ├── jsconfig.json
+│   ├── next-env.d.ts
+│   ├── next.config.mjs
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.mjs
+│   └── README.md
+│
+├── backend
+│   ├── .vercel
+│   ├── controllers
+│   │   └── fileController.js
+│   ├── models
+│   │   └── file.js
+│   ├── node_modules
+│   ├── public
+│   │   ├── reports
+│   │   └── uploads
+│   ├── reports
+│   ├── Routes
+│   │   └── fileRouter.js
+│   ├── services
+│   │   └── analysis.js
+│   ├── uploads
+│   ├── .env
+│   ├── .gitignore
+│   ├── index.js
+│   ├── package-lock.json
+│   └── package.json
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js (v14.x or higher)
+- npm or yarn
+- Git
+
+### Installation
+
+1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/vizualtyics.git
+cd vizualtyics
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install backend dependencies
+```bash
+cd backend
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Install frontend dependencies
+```bash
+cd ../frontend
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Set up environment variables
+   - Create a `.env` file in the backend directory based on the example provided
 
-## Learn More
+5. Start the development servers
 
-To learn more about Next.js, take a look at the following resources:
+For backend:
+```bash
+cd backend
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For frontend:
+```bash
+cd frontend
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+6. Access the application at `http://localhost:3000`
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Navigate to the upload page
+2. Select and upload a CSV file
+3. Choose analysis options
+4. View generated insights and visualizations
+5. Generate and download reports as needed
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API Endpoints
+
+- `POST /api/files/upload` - Upload a CSV file
+- `GET /api/files/:id` - Get file information
+- `POST /api/analysis/:fileId` - Analyze a specific file
+- `GET /api/reports/:fileId` - Get generated reports
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+- [Chart.js](https://www.chartjs.org/) - Used for data visualization
+- [Papa Parse](https://www.papaparse.com/) - CSV parsing library
+- [Tailwind CSS](https://tailwindcss.com/) - For styling components
