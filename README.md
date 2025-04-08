@@ -140,25 +140,6 @@ npm run dev
 4. View generated insights and visualizations
 5. Generate and download reports as needed
 
-## API Endpoints
-
-- `POST /api/files/upload` - Upload a CSV file
-- `GET /api/files/:id` - Get file information
-- `POST /api/analysis/:fileId` - Analyze a specific file
-- `GET /api/reports/:fileId` - Get generated reports
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Acknowledgements
 
 - [Chart.js](https://www.chartjs.org/) - Used for data visualization
