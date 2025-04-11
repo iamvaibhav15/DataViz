@@ -77,7 +77,7 @@ export default function AnalysisPage() {
       case "visualization":
         return (
           <CSVVisualizer 
-            csvUrl={`https://vizulytic.onrender.com${csvUrl}`} 
+            csvUrl={`http://localhost:5000${csvUrl}`} 
             columnStats={analysisData?.analysis?.columnStats} 
           />
         );
@@ -142,7 +142,7 @@ export default function AnalysisPage() {
                 )}
                 {reportUrl && (
                   <a 
-                    href={`https://vizulytic.onrender.com/public${reportUrl}`}
+                    href={`http://localhost:5000/public${reportUrl}`}
                     target="_blank"
                     rel="noopener noreferrer" 
                     className="inline-flex items-center px-5 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors shadow-sm"

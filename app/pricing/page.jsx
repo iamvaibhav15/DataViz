@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "../../components/Navbar";
 
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState("monthly");
@@ -33,7 +32,6 @@ export default function Pricing() {
 
   return (
     <>
-      <Navbar />
       <div className="bg-gray-900 min-h-screen text-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
           <div className="text-center">

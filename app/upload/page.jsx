@@ -108,9 +108,8 @@ export default function FileUploader() {
 
   return (
     <>
-      <Navbar />
       <div
-        className="max-w-7xl mx-auto p-8 bg-gray-900 rounded-xl shadow-xl space-y-6 mt-8"
+        className="max-w-7xl mx-auto p-8 bg-gray-900 rounded-xl shadow-xl space-y-6 mt-8 mb-16"
         onKeyDown={handleKeyPress}
         tabIndex={0}
       >

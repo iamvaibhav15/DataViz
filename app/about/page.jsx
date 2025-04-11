@@ -6,7 +6,6 @@ import { BarChart, PieChart, LineChart, Activity, Users, Globe, Award, BookOpen,
 export default function About() {
   return (
     <>
-      <Navbar/>
       <div className="min-h-screen bg-gray-900 text-gray-200">
       {/* Main About Content - Long scrollable format */}
       <div className="container mx-auto max-w-7xl px-4 py-12">

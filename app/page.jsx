@@ -1,16 +1,11 @@
 // frontend/app/page.js
 "use client";
 
-import { useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 export default function MainPage() {
-  const [currentPage, setCurrentPage] = useState("home");
 
   return (
     <main className="min-h-screen bg-gray-900 text-gray-100">
-      <Navbar />
       <div className="container mx-auto p-4">
         <div className="py-8 max-w-7xl mx-auto ">
           <div className="flex flex-col md:flex-row items-center justify-between mb-12">
@@ -921,7 +916,6 @@ export default function MainPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </main>
   );
 }

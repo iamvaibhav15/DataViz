@@ -4,10 +4,12 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { SignInButton, UserButton, useAuth } from "@clerk/nextjs";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname(); // Get current route path
+  const { isSignedIn } = useAuth();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -39,35 +41,14 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <div className="h-10 w-50 relative group">
               <div className="transform transition-all duration-300 group-hover:scale-105">
-                <svg
-                  className="h-full"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 200 50"
-                >
+                <svg className="h-full" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 200 50">
                   <defs>
-                    <linearGradient
-                      id="logoGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="100%"
-                    >
+                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#1a365d" stopOpacity="0.8" />
-                      <stop
-                        offset="100%"
-                        stopColor="#2563eb"
-                        stopOpacity="0.5"
-                      />
+                      <stop offset="100%" stopColor="#2563eb" stopOpacity="0.5"/>
                     </linearGradient>
                   </defs>
-                  <rect
-                    x="5"
-                    y="3"
-                    width="180"
-                    height="40"
-                    rx="12"
-                    fill="url(#logoGradient)"
-                  />
+                  <rect x="5" y="3" width="180" height="40" rx="12" fill="url(#logoGradient)"/>
                   <g className="chart-elements">
                     <rect x="20" y="28" width="8" height="8" fill="#F44242">
                       <animate attributeName="height" values="8;15;8" dur="3s" repeatCount="indefinite" />
@@ -88,14 +69,7 @@ export default function Navbar() {
                       <stop offset="100%" stopColor="#93c5fd" />
                     </linearGradient>
                   </defs>
-                  <text
-                    x="65"
-                    y="32"
-                    fontFamily="Arial, sans-serif"
-                    fontWeight="bold"
-                    fontSize="24"
-                    fill="url(#textGradient)"
-                  >
+                  <text x="65" y="32" fontFamily="Arial, sans-serif" fontWeight="bold" fontSize="24" fill="url(#textGradient)" >
                     Vizulytics
                   </text>
                 </svg>
@@ -124,8 +98,32 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Sign In Button or User Button - Desktop */}
+          <div className="hidden sm:flex items-center">
+            {isSignedIn ? (
+              <UserButton />
+            ) : (
+              <SignInButton mode="modal">
+                <button className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50">
+                  Sign In
+                </button>
+              </SignInButton>
+            )}
+          </div>
+
+          {/* Mobile Menu Button and Auth Button */}
           <div className="sm:hidden flex items-center">
+            <div className="mr-2">
+              {isSignedIn ? (
+                <UserButton />
+              ) : (
+                <SignInButton mode="modal">
+                  <button className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-1 px-3 rounded-md text-sm transition duration-300 ease-in-out">
+                    Sign In
+                  </button>
+                </SignInButton>
+              )}
+            </div>
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 transition-colors duration-200"
