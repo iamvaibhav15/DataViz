@@ -1,0 +1,43 @@
+{
+  "filename": "1744433717884-331535444.csv",
+  "timestamp": "2025-04-12T04:55:17.947Z",
+  "rowCount": 200,
+  "columnStats": {
+    "cgpa": {
+      "type": "numeric",
+      "min": 4.26,
+      "max": 9.58,
+      "average": 6.990500000000004,
+      "nonNullCount": 200
+    },
+    "package": {
+      "type": "numeric",
+      "min": 1.37,
+      "max": 4.62,
+      "average": 2.996050000000002,
+      "nonNullCount": 200
+    }
+  },
+  "sampleRows": [
+    {
+      "cgpa": "6.89",
+      "package": "3.26"
+    },
+    {
+      "cgpa": "5.12",
+      "package": "1.98"
+    },
+    {
+      "cgpa": "7.82",
+      "package": "3.25"
+    },
+    {
+      "cgpa": "7.42",
+      "package": "3.67"
+    },
+    {
+      "cgpa": "6.94",
+      "package": "3.57"
+    }
+  ]
+}

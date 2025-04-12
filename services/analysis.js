@@ -27,17 +27,12 @@ export async function analyzeCSV(filePath) {
         try {
           const columnStats = analyzeColumns(results, headers);
           // Generate visualization data
-          const visualizationData = await prepareVisualizationData(
-            results,
-            columnStats
-          );
 
           // Generate report
           const reportPath = generateReport(
             filePath,
             results,
             columnStats,
-            visualizationData
           );
 
           resolve({
@@ -45,7 +40,6 @@ export async function analyzeCSV(filePath) {
             columnCount: headers.length,
             headers,
             columnStats,
-            visualizationData,
             summary: `CSV file contains ${rowCount} rows and ${headers.length} columns.`,
             timestamp: new Date().toISOString(),
             report_url: reportPath,
@@ -60,101 +54,7 @@ export async function analyzeCSV(filePath) {
   });
 }
 
-/**
- * Prepares data for different visualization types
- * @param {Array} data - Parsed CSV data
- * @param {Object} columnStats - Column statistics
- * @returns {Object} Processed data for different visualization types
- */
-async function prepareVisualizationData(data, columnStats) {
-  const d3 = await import("d3");
 
-  let categoricalColumn = null;
-  let numericColumn = null;
-
-  for (const column in columnStats) {
-    if (columnStats[column].type === "text" && !categoricalColumn) {
-      categoricalColumn = column;
-    } else if (columnStats[column].type === "numeric" && !numericColumn) {
-      numericColumn = column;
-    }
-
-    if (categoricalColumn && numericColumn) break;
-  }
-
-  const headers = Object.keys(data[0]);
-  categoricalColumn = categoricalColumn || headers[0];
-  numericColumn = numericColumn || headers[1];
-
-  return {
-    barChart: prepareBarChartData(data, categoricalColumn, numericColumn, d3),
-    lineChart: prepareLineChartData(data, categoricalColumn, numericColumn, d3),
-    scatterPlot: prepareScatterPlotData(data, numericColumn, numericColumn),
-    pieChart: preparePieChartData(data, categoricalColumn, numericColumn, d3),
-  };
-}
-
-function prepareBarChartData(data, xAxis, yAxis, d3) {
-  const processedData = data.filter((d) => !isNaN(+d[yAxis]));
-
-  const groupedData = d3.rollup(
-    processedData,
-    (v) => d3.sum(v, (d) => +d[yAxis]),
-    (d) => d[xAxis]
-  );
-
-  return Array.from(groupedData, ([key, value]) => ({
-    [xAxis]: key,
-    [yAxis]: value,
-  }));
-}
-
-function prepareLineChartData(data, xAxis, yAxis, d3) {
-  const processedData = data.filter((d) => !isNaN(+d[yAxis]));
-
-  processedData.sort((a, b) => {
-    if (a[xAxis] < b[xAxis]) return -1;
-    if (a[xAxis] > b[xAxis]) return 1;
-    return 0;
-  });
-
-  const groupedData = d3.rollup(
-    processedData,
-    (v) => d3.mean(v, (d) => +d[yAxis]),
-    (d) => d[xAxis]
-  );
-
-  return Array.from(groupedData, ([key, value]) => ({
-    [xAxis]: key,
-    [yAxis]: value,
-  }));
-}
-
-function prepareScatterPlotData(data, xAxis, yAxis) {
-  return data
-    .filter((d) => !isNaN(+d[xAxis]) && !isNaN(+d[yAxis]))
-    .map((d) => ({
-      [xAxis]: +d[xAxis],
-      [yAxis]: +d[yAxis],
-    }));
-}
-
-function preparePieChartData(data, labelField, valueField, d3) {
-  const processedData = data.filter((d) => !isNaN(+d[valueField]));
-
-  const groupedData = d3.rollup(
-    processedData,
-    (v) => d3.sum(v, (d) => +d[valueField]),
-    (d) => d[labelField]
-  );
-
-  const result = Array.from(groupedData, ([key, value]) => ({
-    [labelField]: key,
-    [valueField]: value,
-  }));
-
-  return result.sort((a, b) => b[valueField] - a[valueField]).slice(0, 10);
-}
 
 function analyzeColumns(data, headers) {
   const stats = {};
@@ -229,7 +129,7 @@ function findMostCommon(values) {
   return maxValue;
 }
 
-function generateReport(filePath, data, columnStats, visualizationData) {
+function generateReport(filePath, data, columnStats) {
   const reportDir = path.join(process.cwd(), "public", "reports");
 
   if (!fs.existsSync(reportDir)) {
@@ -246,7 +146,6 @@ function generateReport(filePath, data, columnStats, visualizationData) {
     timestamp: new Date().toISOString(),
     rowCount: data.length,
     columnStats,
-    visualizationData,
     sampleRows: data.slice(0, 5),
   };
 

@@ -61,33 +61,3 @@ export async function handleFileUpload(req, res) {
   }
 }
 
-export async function getFileById(req, res) {
-  try {
-    const fileId = req.params.id;
-    const file = await File.findById(fileId);
-
-    if (!file) {
-      return res.status(404).json({ message: "File not found" });
-    }
-
-    const fileUrl = `/uploads/${file.filename}`;
-
-    return res.status(200).json({
-      file,
-      publicUrl: fileUrl,
-    });
-  } catch (error) {
-    console.error("Error retrieving file:", error);
-    return res.status(500).json({ message: "Error retrieving file" });
-  }
-}
-
-export async function getAllFiles(req, res) {
-  try {
-    const files = await File.find().sort({ createdAt: -1 });
-    return res.status(200).json({ files });
-  } catch (error) {
-    console.error("Error retrieving files:", error);
-    return res.status(500).json({ message: "Error retrieving files" });
-  }
-}

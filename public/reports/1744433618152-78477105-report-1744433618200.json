@@ -1,0 +1,54 @@
+{
+  "filename": "1744433618152-78477105.csv",
+  "timestamp": "2025-04-12T04:53:38.200Z",
+  "rowCount": 125,
+  "columnStats": {
+    "Person_No": {
+      "type": "text",
+      "uniqueCount": 125,
+      "mostCommon": "Person1",
+      "nonNullCount": 125
+    },
+    "Weight (KG)": {
+      "type": "numeric",
+      "min": 52,
+      "max": 71,
+      "average": 61.248,
+      "nonNullCount": 125
+    },
+    "Height (CM)": {
+      "type": "numeric",
+      "min": 161,
+      "max": 179,
+      "average": 169.632,
+      "nonNullCount": 125
+    }
+  },
+  "sampleRows": [
+    {
+      "Person_No": "Person1",
+      "Weight (KG)": "67",
+      "Height (CM)": "176"
+    },
+    {
+      "Person_No": "Person2",
+      "Weight (KG)": "69",
+      "Height (CM)": "178"
+    },
+    {
+      "Person_No": "Person3",
+      "Weight (KG)": "61",
+      "Height (CM)": "170"
+    },
+    {
+      "Person_No": "Person4",
+      "Weight (KG)": "60",
+      "Height (CM)": "169"
+    },
+    {
+      "Person_No": "Person5",
+      "Weight (KG)": "65",
+      "Height (CM)": "174"
+    }
+  ]
+}
