@@ -1,3 +1,4 @@
+// components/CSVVisualizer.jsx
 import { useState, useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
@@ -868,7 +869,7 @@ function LineChart({ data, xAxis, yAxis, theme }) {
   );
 }
 
-// Scatter Plot Component with full implementation
+// Scatter Plot Component
 function ScatterPlot({ data, xAxis, yAxis, theme }) {
   const svgRef = useRef(null);
   
@@ -880,6 +881,24 @@ function ScatterPlot({ data, xAxis, yAxis, theme }) {
     
     // Filter out non-numeric values for both axes
     const processedData = data.filter(d => !isNaN(+d[xAxis]) && !isNaN(+d[yAxis]));
+    
+    // Check if we have any data after filtering
+    if (!processedData.length) {
+      // Display a message if no valid data points exist
+      const svg = d3.select(svgRef.current)
+        .attr('width', 800)
+        .attr('height', 400);
+        
+      svg.append('text')
+        .attr('x', 400)
+        .attr('y', 200)
+        .attr('text-anchor', 'middle')
+        .style('font-size', '16px')
+        .style('fill', theme.text)
+        .text('No valid numeric data points available for the selected axes');
+        
+      return;
+    }
     
     const margin = { top: 40, right: 40, bottom: 80, left: 80 };
     const width = 800 - margin.left - margin.right;
@@ -963,9 +982,29 @@ function ScatterPlot({ data, xAxis, yAxis, theme }) {
     // Create a custom color scale based on a third variable if available
     // Or use a static color if no third variable
     let colorScale, colorVariable;
-    const numericalColumns = Object.keys(processedData[0]).filter(col => 
+    
+    // Check if processedData[0] exists before trying to use Object.keys on it
+    const numericalColumns = processedData[0] ? Object.keys(processedData[0]).filter(col => 
       col !== xAxis && col !== yAxis && !isNaN(+processedData[0][col])
-    );
+    ) : [];
+    
+    // Create tooltip div if it doesn't exist
+    let tooltip = d3.select('body').select('.tooltip');
+    if (tooltip.empty()) {
+      tooltip = d3.select('body')
+        .append('div')
+        .attr('class', 'tooltip')
+        .style('position', 'absolute')
+        .style('background', 'rgba(0,0,0,0.7)')
+        .style('color', 'white')
+        .style('padding', '8px')
+        .style('border-radius', '4px')
+        .style('pointer-events', 'none')
+        .style('font-size', '12px')
+        .style('box-shadow', '0 2px 10px rgba(0,0,0,0.2)')
+        .style('display', 'none')
+        .style('z-index', 1000);
+    }
     
     if (numericalColumns.length > 0) {
       colorVariable = numericalColumns[0]; // Use first available numerical column
@@ -986,7 +1025,7 @@ function ScatterPlot({ data, xAxis, yAxis, theme }) {
         .attr('cy', d => y(+d[yAxis]))
         .attr('r', 5)
         .attr('fill', d => colorScale(+d[colorVariable]))
-        .attr('stroke', theme.highlight)
+        .attr('stroke', theme.background)
         .attr('stroke-width', 0.5)
         .attr('opacity', 0.7)
         .on('mouseover', function(event, d) {
@@ -1024,7 +1063,7 @@ function ScatterPlot({ data, xAxis, yAxis, theme }) {
         .attr('cy', d => y(+d[yAxis]))
         .attr('r', 5)
         .attr('fill', theme.primary)
-        .attr('stroke', theme.highlight)
+        .attr('stroke', theme.background)
         .attr('stroke-width', 0.5)
         .attr('opacity', 0.7)
         .on('mouseover', function(event, d) {
@@ -1052,24 +1091,6 @@ function ScatterPlot({ data, xAxis, yAxis, theme }) {
         });
     }
     
-    // Create tooltip div if it doesn't exist
-    let tooltip = d3.select('body').select('.tooltip');
-    if (tooltip.empty()) {
-      tooltip = d3.select('body')
-        .append('div')
-        .attr('class', 'tooltip')
-        .style('position', 'absolute')
-        .style('background', theme.tooltip)
-        .style('color', theme.tooltipText)
-        .style('padding', '8px')
-        .style('border-radius', '4px')
-        .style('pointer-events', 'none')
-        .style('font-size', '12px')
-        .style('box-shadow', '0 2px 10px rgba(0,0,0,0.2)')
-        .style('display', 'none')
-        .style('z-index', 1000);
-    }
-    
     // Add axis labels
     svg.append('text')
       .attr('x', width / 2)
@@ -1095,7 +1116,7 @@ function ScatterPlot({ data, xAxis, yAxis, theme }) {
       .attr('text-anchor', 'middle')
       .style('font-size', '16px')
       .style('font-weight', 'bold')
-      .style('fill', theme.title)
+      .style('fill', theme.text) // Using theme text color instead of title color
       .text(`${yAxis} vs ${xAxis}${colorVariable ? ` (colored by ${colorVariable})` : ''}`);
     
     // Add color legend if using a third variable

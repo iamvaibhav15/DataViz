@@ -54,17 +54,17 @@ export default function AnalysisPage() {
                       <div className="text-sm text-gray-300">
                         <p><span className="font-medium">Type:</span> {stats.type}</p>
                         {stats.type === 'numeric' ? (
-                          <>
-                            <p><span className="font-medium">Min:</span> {stats.min}</p>
-                            <p><span className="font-medium">Max:</span> {stats.max}</p>
-                            <p><span className="font-medium">Average:</span> {stats.average.toFixed(2)}</p>
-                          </>
-                        ) : (
-                          <>
-                            <p><span className="font-medium">Unique Values:</span> {stats.uniqueCount}</p>
-                            <p><span className="font-medium">Most Common:</span> {stats.mostCommon}</p>
-                          </>
-                        )}
+                            <>
+                              <p><span className="font-medium">Min:</span> {stats.min !== null ? stats.min : 'N/A'}</p>
+                              <p><span className="font-medium">Max:</span> {stats.max !== null ? stats.max : 'N/A'}</p>
+                              <p><span className="font-medium">Average:</span> {stats.average !== null ? stats.average.toFixed(2) : 'N/A'}</p>
+                            </>
+                          ) : (
+                            <>
+                              <p><span className="font-medium">Unique Values:</span> {stats.uniqueCount}</p>
+                              <p><span className="font-medium">Most Common:</span> {stats.mostCommon}</p>
+                            </>
+                          )}
                         <p><span className="font-medium">Non-null Count:</span> {stats.nonNullCount}</p>
                       </div>
                     </div>
@@ -78,7 +78,7 @@ export default function AnalysisPage() {
         return (
           <CSVVisualizer 
             csvUrl={`https://vizulytic.onrender.com${csvUrl}`} 
-            columnStats={analysisData?.analysis?.columnStats} 
+            columnStats={analysisData?.analysis?.columnStats || {}} 
           />
         );
       default:
