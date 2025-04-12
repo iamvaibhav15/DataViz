@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 
 import React, { useState, useRef } from "react";
 import axios from "axios";
-import Navbar from "../../components/Navbar";
 
 export default function FileUploader() {
   const router = useRouter();
